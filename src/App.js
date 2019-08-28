@@ -4,20 +4,14 @@ import PhotoCard from "./components/PhotoCard";
 import "./App.css";
 
 function App() {
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [url, setUrl] = useState('');
-  const [explanation, setExplanation] = useState('');
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
       .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
       .then(res => {
         console.log(res.data);
-        setTitle(res.data.title);
-        setDate(res.data.date);
-        setUrl(res.data.url);
-        setExplanation(res.data.explanation);
+        setData(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -29,10 +23,10 @@ function App() {
     <div className="App">
       <h1>Astronomy Photograph of the Day</h1>
 
-      <PhotoCard title= { title }
-                 date={ date }
-                 url= { url }
-                 explanation={ explanation } />
+      {data && <PhotoCard title= { data.title }
+                 date={ data.date }
+                 url= { data.url }
+                 explanation={ data.explanation } />}
     </div>
   );
 }
