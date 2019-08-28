@@ -23,10 +23,11 @@ function App() {
     <div className="App">
       <h1>Astronomy Photograph of the Day</h1>
 
-      {data && <PhotoCard title= { data.title }
+      {data ? <PhotoCard title= { data.title }
                  date={ data.date }
                  url= { data.url }
-                 explanation={ data.explanation } />}
+                 explanation={ data.explanation } />
+            : <h3>Loading...</h3>}
     </div>
   );
 }
