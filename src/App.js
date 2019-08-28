@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+      .get('https://api.nasa.gov/planetary/apod?api_key=ji5M4tBiBHIuzwsQZniy78ULsuBZn0Jpx7VQC8uV')
       .then(res => {
         console.log(res.data);
         setData(res.data);
@@ -22,7 +22,6 @@ function App() {
   return (
     <div className="App">
       <h1>Astronomy Photograph of the Day</h1>
-
       {data ? <PhotoCard title= { data.title }
                  date={ data.date }
                  url= { data.url }
