@@ -1,5 +1,10 @@
+/* @import url(//db.onlinewebfonts.com/c/be558f1d7677fb1ddcefd94d49934085?family=Nasalization); */
+
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
