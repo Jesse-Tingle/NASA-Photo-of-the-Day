@@ -3,14 +3,18 @@ import axios from "axios";
 import PhotoCard from "./components/PhotoCard";
 import "./App.css";
 import logo from "./img/NASA_logo.png";
+import {config} from "./config/config";
 
 function App() {
   const [data, setData] = useState(null);
   const [date, setDate] = useState('');
 
+  
+
   useEffect(() => {
+    var mykey = config.MY_KEY;
     axios
-      .get(`https://api.nasa.gov/planetary/apod?api_key=SJB7md1atBzrpivCLAZF5FnSGnqqb4gaQyQ9RwbN&date=${date}`)
+      .get(`https://api.nasa.gov/planetary/apod?api_key=${mykey}&date=${date}`)
       .then(res => {
         console.log(res.data);
         setData(res.data);
