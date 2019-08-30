@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleTitle, ContainerDiv, StyledImg, TextContentDiv, ImgAndCaptionDiv } from './styles.js';
+import "../App.css";
+import { StyleTitle, ContainerDiv, StyledImg, TextContentDiv, ImgAndCaptionDiv, StyledDate, StyledNasa } from './styles.js';
 
 // const StyleTitle = styled.h2`
 //     color: blue;
@@ -17,12 +18,15 @@ function PhotoCard(props) {
                     (<iframe src={ props.url } alt="NASA" title={props.title}/>)
                 }
                 
-                <p>All images provided by NASA</p>
+                <div className="caption">
+                    <p>All images provided by</p>
+                    <StyledNasa>NASA</StyledNasa>
+                </div>
             </ImgAndCaptionDiv>
 
             <TextContentDiv>
                 <StyleTitle> { props.title } </StyleTitle>
-                <h4> { props.date } </h4>
+                <StyledDate> { props.date } </StyledDate>
                 <p> { props.explanation } </p>
             </TextContentDiv>
 
