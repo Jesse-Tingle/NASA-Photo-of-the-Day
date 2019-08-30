@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleTitle, ContainerDiv, StyledImg } from './styles.js';
+import { StyleTitle, ContainerDiv, StyledImg, TextContentDiv, ImgAndCaptionDiv } from './styles.js';
 
 // const StyleTitle = styled.h2`
 //     color: blue;
@@ -10,16 +10,21 @@ function PhotoCard(props) {
     return (
         <ContainerDiv>
 
-            <div>
-                <StyledImg src={ props.url } alt="NASA"/>
+            <ImgAndCaptionDiv>
+                {props.type === 'image' ?
+                    (<StyledImg src={ props.url } alt="NASA" />)
+                :
+                    (<iframe src={ props.url } alt="NASA" title={props.title}/>)
+                }
+                
                 <p>All images provided by NASA</p>
-            </div>
+            </ImgAndCaptionDiv>
 
-            <div>
+            <TextContentDiv>
                 <StyleTitle> { props.title } </StyleTitle>
                 <h4> { props.date } </h4>
                 <p> { props.explanation } </p>
-            </div>
+            </TextContentDiv>
 
         </ContainerDiv>
     )

@@ -7,10 +7,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.logo-img {
+  width: 15%;
+  height: 15%;
+  padding-top: 45px;
+  padding-left: 4%;
+  padding-right: 2%;
+}
+
 h1 {
   font-family: Nasalization;
   font-size: 4rem;
-  width: 64%;
+  width: 70%;
   text-align: center;
 }
 

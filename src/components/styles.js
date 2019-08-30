@@ -8,8 +8,13 @@ export const ContainerDiv = styled.div`
 `;
 
 export const TextContentDiv = styled.div`
-
+    padding-left: 2%;
+    width: 35%;
 `;
+
+// export const Nasa = styled.p`
+//     font-family: Nasalization;
+// `;
 
 export const ImgAndCaptionDiv = styled.div`
     display: flex;
